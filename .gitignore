@@ -1,0 +1,29 @@
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editors/IDE
+.vscode/
+.idea/
+*.swp
+
+# Logs & temp
+*.log
+*.tmp
+tmp/
+dist/
+build/
+
+# Env & secrets
+.env
+*.env
+*.pem
+*.key
+*.crt
+**/secrets/**
+**/*secret*.yaml
+
+# Node/Python (only if you add code later)
+node_modules/
+venv/
+__pycache__/

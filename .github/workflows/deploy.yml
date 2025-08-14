@@ -1,0 +1,37 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - staging
+      - dev
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Set up kubectl
+      uses: azure/setup-kubectl@v3
+      with:
+        version: v1.28.0
+
+    - name: Configure Kubeconfig
+      run: |
+        mkdir -p ~/.kube
+        echo "${KUBECONFIG_DATA}" | base64 --decode > ~/.kube/config
+
+    - name: Deploy with Kustomize
+      run: |
+        if [[ $GITHUB_REF == "refs/heads/dev" ]]; then
+          kubectl apply -k overlays/dev
+        elif [[ $GITHUB_REF == "refs/heads/staging" ]]; then
+          kubectl apply -k overlays/staging
+        elif [[ $GITHUB_REF == "refs/heads/main" ]]; then
+          kubectl apply -k overlays/prod
+        fi
+      env:
+        KUBECONFIG_DATA: ${{ secrets.KUBECONFIG_DATA }}
