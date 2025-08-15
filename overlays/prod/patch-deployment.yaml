@@ -1,20 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app
+  name: myapp
 spec:
-  replicas: 3
+  replicas: 2
   template:
     spec:
       containers:
-        - name: my-app
-          env:
-            - name: APP_ENV
-              value: prod
-          resources:
-            requests:
-              cpu: "200m"
-              memory: "256Mi"
-            limits:
-              cpu: "500m"
-              memory: "512Mi"
+      - name: myapp
+        image: mydockerhub/myapp:dev

@@ -1,8 +1,4 @@
 resources:
   - ../../base
-
-patches:
-  - path: patch-deployment.yaml
-    target:
-      kind: Deployment
-      name: my-app
+patchesStrategicMerge:
+  - patch-deployment.yaml

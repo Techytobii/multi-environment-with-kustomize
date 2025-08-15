@@ -1,13 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app
+  name: myapp
 spec:
   replicas: 1
   template:
     spec:
       containers:
-        - name: my-app
-          env:
-            - name: APP_ENV
-              value: dev
+      - name: myapp
+        image: mydockerhub/myapp:dev

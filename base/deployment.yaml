@@ -1,21 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app
-  labels:
-    app: my-app
+  name: myapp
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: my-app
+      app: myapp
   template:
     metadata:
       labels:
-        app: my-app
+        app: myapp
     spec:
       containers:
-        - name: my-app
-          image: nginx:stable
-          ports:
-            - containerPort: 80
+      - name: myapp
+        image: mydockerhub/myapp:latest
+        ports:
+        - containerPort: 80
