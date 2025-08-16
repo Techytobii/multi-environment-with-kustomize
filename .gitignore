@@ -27,3 +27,5 @@ build/
 node_modules/
 venv/
 __pycache__/
+
+actions-runner/
