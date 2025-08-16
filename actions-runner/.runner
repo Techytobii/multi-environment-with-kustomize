@@ -1,0 +1,11 @@
+﻿{
+  "agentId": 2,
+  "agentName": "great",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://pipelinesghubeus24.actions.githubusercontent.com/Ty13yO2CFYhnEJVF3Nq1koRdUq5H7yFroH6b7xLSRtNASBal8i/",
+  "gitHubUrl": "https://github.com/Techytobii/multi-environment-with-kustomize",
+  "workFolder": "multi-environment-with-kustomize",
+  "useV2Flow": true,
+  "serverUrlV2": "https://broker.actions.githubusercontent.com/"
+}
