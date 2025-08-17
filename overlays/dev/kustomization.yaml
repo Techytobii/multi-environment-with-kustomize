@@ -1,4 +1,9 @@
-resources:
+bases:
   - ../../base
-patchesStrategicMerge:
-  - patch-deployment.yaml
+
+configMapGenerator:
+  - name: app-config
+    behavior: merge
+    literals:
+      - APP_ENV=development
+      - APP_DEBUG=true
