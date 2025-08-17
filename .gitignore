@@ -1,31 +1,23 @@
-# OS junk
-.DS_Store
-Thumbs.db
+# Ignore secret files
+.env.secret
+*.key
+*.pem
 
-# Editors/IDE
+# Ignore IDE/editor settings
 .vscode/
 .idea/
 *.swp
 
-# Logs & temp
+# Ignore Kubernetes/Helm/Kustomize generated files
 *.log
 *.tmp
-tmp/
-dist/
-build/
+*.out
+*.bak
 
-# Env & secrets
-.env
-*.env
-*.pem
-*.key
-*.crt
-**/secrets/**
-**/*secret*.yaml
+# Ignore system files
+.DS_Store
+Thumbs.db
 
-# Node/Python (only if you add code later)
+# Ignore node_modules or vendor if app code exists here
 node_modules/
-venv/
-__pycache__/
-
-actions-runner/
+vendor/
